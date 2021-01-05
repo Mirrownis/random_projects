@@ -58,7 +58,7 @@ public class Turing {
 			//then check if it also is for the current symbol
 			//if able, do the transition and disarm 'done'
 			for (int i = k+3; i < machine.length; i = i+5) {
-				if (machine[i].length() == p) {
+				if (machine[i].length() == q) {
 						if (machine[i+1].length() == a) {
 							
 							//change to new state
@@ -94,4 +94,4 @@ public class Turing {
     }
 }
 
-// Test word: 010001101#000100
+// Test word: 0100010101#1
