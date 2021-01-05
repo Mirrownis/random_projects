@@ -65,14 +65,14 @@ public class Turing {
 							q = machine[i+2].length();
 							
 							//write new symbol on word
-							switch (machine[i+2].length()) {
+							switch (machine[i+3].length()) {
 							case 1: word[p] = '0'; break;
 							case 2: word[p] = '1'; break;
 							default: word[p] = 'U'; break;
 							}
 							
 							//change head position
-							switch (machine[i+3].length()) {
+							switch (machine[i+4].length()) {
 							case 1: p--; break;
 							case 2: p++; break;
 							default: break;
