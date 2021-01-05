@@ -48,10 +48,13 @@ public class Turing {
 			}
 			
 			//update what the head reads
-			switch (Integer.parseInt(String.valueOf(word[p]))) {
-			case 0: a = 1; break;
-			case 1: a = 2; break;
-			default: a = 3; break;
+			if (-1 < p && p < word.length) {
+				switch (Integer.parseInt(String.valueOf(word[p]))) {
+				case 0: a = 1; break;
+				case 1: a = 2; break;
+				}
+			} else {
+				a = 3;
 			}
 			
 			//check if there is a transition from the current state
@@ -94,4 +97,4 @@ public class Turing {
     }
 }
 
-// Test word: 0100010101#1
+// Test word: 001000101001010100101001#1
