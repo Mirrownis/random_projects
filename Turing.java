@@ -23,8 +23,8 @@ public class Turing {
 		int k = machine[2].length();
 		// Array of accepting states
 		int[] f = new int[k];
-		for (int i = 3; i < k+3; i++) {
-			  f[i] = machine[i].length();
+		for (int i = 0; i < k; i++) {
+			  f[i] = machine[i+3].length();
 			}
 		
 		// Working the Turing Machine
