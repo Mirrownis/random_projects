@@ -12,6 +12,12 @@ public class Turing {
 		String[] machine = Arrays.copyOf(tmp1, tmp1.length-1); 
 		char[] word = parts[1].toCharArray();
 		
+		// Initial Output
+		System.out.println("You entered turing machine " + parts[0]);
+		System.out.println(Arrays.toString(machine));
+		System.out.println("You entered word " + new String(word));
+		System.out.print("Word was accepted: ");
+		
 		
 		// Definition Turing Machine
 		
@@ -88,13 +94,27 @@ public class Turing {
 				}
 			}
 		
-		// Output
-		System.out.println("You entered turing machine " + parts[0]);
-		System.out.println(Arrays.toString(machine));
-		System.out.println("You entered word " + new String(word));
-		System.out.println("Word was accepted: " + Integer.toString(accepted));
+		// Final Output
+		System.out.println(Integer.toString(accepted));
 		input.close();
     }
 }
 
-// Test word: 001000101001010100101001#1
+/*
+ * Test words:
+ * 0100010101#0
+ * 0100010101#1
+ * 0100010101#2
+ * 0100011#0
+ * 0100011#1
+ * 0100011#2
+ * 001000101001010100101001#0
+ * 001000101001010100101001#1
+ * 001000101001010100101001#2
+ * 0010001010101010010100101001001001001#0
+ * 0010001010101010010100101001001001001#1
+ * 0010001010101010010100101001001001001#2
+ * 01000110100010100010001#0
+ * 01000110100010100010001#1
+ * 01000110100010100010001#2
+ */
