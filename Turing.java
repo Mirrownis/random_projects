@@ -39,8 +39,9 @@ public class Turing {
 		int q = 1;	//current state
 		int p = 0; //head position
 		int a = 0; //symbol at head position
-		while (done == 0) {
-			
+		int t = 2058891; //maximum number of iterations
+		while (done == 0 && t > 0) {
+			t--;
 			//arm 'done' to default to machine stopping
 			done = 1;
 			
@@ -54,13 +55,28 @@ public class Turing {
 			}
 			
 			//update what the head reads
-			if (-1 < p && p < word.length) {
-				switch (Integer.parseInt(String.valueOf(word[p]))) {
-				case 0: a = 1; break;
-				case 1: a = 2; break;
+			if (p == -1) {
+				char[] tmpArr = Arrays.copyOf(word, word.length+1);
+				char[] word = new  char[tmpArr.length];
+				word[0] = 2;
+				for (int i = 0; i < tmpArr.length; i++) {
+					word[i+1] = tmpArr[i];
 				}
-			} else {
-				a = 3;
+			}
+			
+			if (p == word.length) {
+				char[] tmpArr = Arrays.copyOf(word, word.length+1);
+				char[] word = new  char[tmpArr.length];
+				for (int i = 0; i < tmpArr.length-1; i++) {
+					word[i] = tmpArr[i];
+				}
+				word[word.length] = 2;
+			}
+			
+			switch (Integer.parseInt(String.valueOf(word[p]))) {
+			case 0: a = 1; break;
+			case 1: a = 2; break;
+			default: a = 3; break;
 			}
 			
 			//check if there is a transition from the current state
@@ -77,7 +93,7 @@ public class Turing {
 							switch (machine[i+3].length()) {
 							case 1: word[p] = '0'; break;
 							case 2: word[p] = '1'; break;
-							default: word[p] = 'U'; break;
+							default: word[p] = '2'; break;
 							}
 							
 							//change head position
@@ -96,6 +112,7 @@ public class Turing {
 		
 		// Final Output
 		System.out.println(Integer.toString(accepted));
+		System.out.println("New word is  " + new String(word));
 		input.close();
     }
 }
