@@ -3,7 +3,7 @@ I put all my projects that have no larger context in here
 
 //Cze&Peku Discord 1d10 lists//
 
-a text grab of the channel "d10-roundtable", formatted for https://homebrewery.naturalcrit.com/ format
+A text grab from the "Czepeku's Guildhall" Discord server, courtesy of the channel "d10-roundtable", formatted for https://homebrewery.naturalcrit.com/ format. Readable on https://homebrewery.naturalcrit.com/share/cru2yefAOfz3
 
 //Turing.java//
 
